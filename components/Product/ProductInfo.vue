@@ -47,7 +47,6 @@
                     </base-button>
                 </el-tooltip>
 
-
                 <el-tooltip content="Settings"
                             :open-delay="300"
                             placement="top">
@@ -65,21 +64,28 @@
                 </el-tooltip>
             </template>
           </el-table-column>
-        </el-table>
+        </el-table>  
+        
+        <div>
+          <base-pagination :page-count="10" v-model="defaultPagination"></base-pagination>
+        </div>
       </card>
     </div>
   </div>
 </template>
 <script>
 import { Table, TableColumn } from 'element-ui';
+import {BasePagination} from '@/components'
 
 export default {
   components: {
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn
+    [TableColumn.name]: TableColumn,
+    BasePagination
   },
   data() {
     return {
+      defaultPagination: 1,
       tableData: [
         {
           id: 1,
