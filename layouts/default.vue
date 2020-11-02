@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
+  <div class="sidebar-wrapper-docs" :class="{ 'nav-open': $sidebar.showSidebar }">
     <notifications></notifications>
     <side-bar
       :background-color="sidebarBackground"
@@ -45,7 +45,7 @@
           :link="{
             name: 'Reporting',
             icon: 'tim-icons icon-single-copy-04',
-            path: '/reporting'
+            path: '/reporting',
           }"
         ></sidebar-item>
 

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
-        <h5 slot="header" class="title">Product</h5>
+        <h5 slot="header" class="title">Laporan Transaksi Pembelian dan Penjualan</h5>
         <el-table 
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%">
@@ -30,62 +30,37 @@
           ></el-table-column>
           <el-table-column
             align="right">
-            <div slot="header" slot-scope="scope">
+            <template slot="header" slot-scope="scope">
               <el-input
                 v-model="search"
                 align="right"
                 size="mini"
                 placeholder="Type to search"/>
-            </div>
-
-            <div slot-scope="scope">
-                <el-tooltip content="Info"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="info" size="sm" icon>
-                    <i class="tim-icons icon-notes"></i>
-                    </base-button>
-                </el-tooltip>
-
-                <el-tooltip content="Settings"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="success" size="sm" icon>
-                    <i class="tim-icons icon-settings"></i>
-                    </base-button>
-                </el-tooltip>
-
-                <el-tooltip content="Delete"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="danger" size="sm" icon>
-                    <i class="tim-icons icon-simple-remove"></i>
-                    </base-button>
-                </el-tooltip>
-            </div>
+            </template>
+            <template slot-scope="scope">
+                 <base-button 
+                    class="animation-on-hover"
+                    size="sm"
+                    type="default"
+                    @click="handleDetail(scope.$index, scope.row)">
+                <i class="tim-icons icon-notes"></i>Detail</base-button>
+            </template>
           </el-table-column>
-        </el-table>  
-        
-        <div >
-          <base-pagination :page-count="10" v-model="defaultPagination" circle></base-pagination>
-        </div>
+        </el-table>
       </card>
     </div>
   </div>
 </template>
 <script>
 import { Table, TableColumn } from 'element-ui';
-import {BasePagination} from '@/components'
 
 export default {
   components: {
     [Table.name]: Table,
-    [TableColumn.name]: TableColumn,
-    BasePagination
+    [TableColumn.name]: TableColumn
   },
   data() {
     return {
-      defaultPagination: 1,
       tableData: [
         {
           id: 1,
