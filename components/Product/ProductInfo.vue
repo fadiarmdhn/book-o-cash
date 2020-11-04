@@ -2,66 +2,64 @@
   <div class="row">
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
-        <h5 slot="header" class="title">Product List</h5>
+        <h3 slot="header" class="title">Product List</h3>
+        <base-button 
+          class="animation-on-hover" 
+          size="sm" 
+          type="info">Add Product</base-button>
         <el-table 
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%">
           <el-table-column
             sortable
             label="Product"
-            property="name"
+            property="product"
           ></el-table-column>
           <el-table-column
             sortable
             label="Date"
-            property="country"
+            property="date"
           ></el-table-column>
           <el-table-column
             sortable
             label="Category"
-            property="city"
+            property="category"
           ></el-table-column>
           <el-table-column
             sortable
-            align="right"
-            header-align="right"
-            label="Purchase Sell"
-            property="salary"
+            align="center"
+            header-align="center"
+            label="Purchase Price"
+            property="purchase"
           ></el-table-column>
           <el-table-column
-            align="right">
-            <div slot="header" slot-scope="scope">
-            </div>
+            align="center"
+            header-align="center"
+            label="Status">
             <div slot-scope="scope">
-                <el-tooltip content="Info"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="info" size="sm" icon>
-                    <i class="tim-icons icon-notes"></i>
-                    </base-button>
-                </el-tooltip>
-
-                <el-tooltip content="Edit"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="success" size="sm" icon>
-                    <i class="tim-icons icon-settings"></i>
-                    </base-button>
-                </el-tooltip>
-
-                <el-tooltip content="Delete"
-                            :open-delay="300"
-                            placement="top">
-                    <base-button type="danger" size="sm" icon>
-                    <i class="tim-icons icon-simple-remove"></i>
-                    </base-button>
-                </el-tooltip>
+                 <base-button 
+                    size="sm"
+                    type="success"
+                    @click="handleDetail(scope.$index, scope.row)"
+                  > Available</base-button>
+            </div>
+          </el-table-column>
+          <el-table-column
+            align="center"
+            header-align="center"
+            label="Details">
+            <div slot-scope="scope">
+                 <base-button 
+                    class="animation-on-hover"
+                    size="sm"
+                    type="default"
+                    @click="handleDetail(scope.$index, scope.row)"
+                  > Ingridients</base-button>
             </div>
           </el-table-column>
         </el-table>  
-        
         <div >
-          <base-pagination :page-count="10" v-model="defaultPagination"></base-pagination>
+          <base-pagination :page-count="5" v-model="defaultPagination"></base-pagination>
         </div>
       </card>
     </div>
@@ -83,38 +81,52 @@ export default {
       tableData: [
         {
           id: 1,
-          name: 'Nasi Putih',
-          salary: 'Rp 168.738',
-          country: '29-10-2020',
-          city: 'Masuk'
+          product: 'Nasi Goreng',
+          purchase: 'Rp 168.738',
+          date: '29-10-2020',
+          category: 'Food'
         },
         {
           id: 2,
-          name: 'Ayam Panggang',
-          salary: 'Rp 237.789',
-          country: '29-10-2020',
-          city: 'Masuk'
+          product: 'Nasi Liwet',
+          purchase: 'Rp 237.789',
+          date: '29-10-2020',
+          category: 'Food'
         },
         {
           id: 3,
-          name: 'Rendang',
-          salary: 'Rp 163.142',
-          country: '10-10-2020',
-          city: 'Masuk'
+          product: 'Puyunghai',
+          purchase: 'Rp 163.142',
+          date: '10-10-2020',
+          category: 'Food'
         },
         {
           id: 4,
-          name: 'Gulai Ayam',
-          salary: 'Rp 185.735',
-          country: '12-10-2020',
-          city: 'Masuk'
+          product: 'Gulai Ayam',
+          purchase: 'Rp 185.735',
+          date: '12-10-2020',
+          category: 'Food'
         },
         {
           id: 5,
-          name: 'Gulai Ikan',
-          salary: 'Rp 130,542',
-          country: '13-10-2020',
-          city: 'Masuk'
+          product: 'Kwetiau Goreng',
+          purchase: 'Rp 130,542',
+          date: '13-10-2020',
+          category: 'Food'
+        },
+        {
+          id: 6,
+          product: 'Teh Manis',
+          purchase: 'Rp 130,542',
+          date: '13-10-2020',
+          category: 'Beverage'
+        },
+        {
+          id: 7,
+          product: 'Jus Jeruk',
+          purchase: 'Rp 130,542',
+          date: '13-10-2020',
+          category: 'Beverage'
         }
       ],
       search: '',
