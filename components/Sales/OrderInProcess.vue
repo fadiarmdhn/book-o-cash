@@ -58,9 +58,8 @@
           <el-table-column>
             <div slot-scope="scope">
                  <base-button 
-                    class="animation-on-hover"
                     size="sm"
-                    type="default"
+                    type="success"
                     @click="handleDetail(scope.$index, scope.row)"
                   > Finish</base-button>
             </div>
