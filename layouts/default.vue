@@ -6,7 +6,7 @@
       :short-title="$t('sidebar.shortTitle')"
       :title="indah"
     >
-      <template slot-scope="props" slot="links">
+      <div slot="links">
         <sidebar-item
           :link="{
             name: 'Dashboard',
@@ -64,14 +64,7 @@
             path: '/typography'
           }"
         ></sidebar-item>
-
-        <li class="active-pro">
-          <a href="https://www.creative-tim.com/product/nuxt-black-dashboard-pro" target="_blank">
-            <i class="tim-icons icon-spaceship"></i>
-            <p>Upgrade to PRO</p>
-          </a>
-        </li>
-      </template>
+      </div>
     </side-bar>
     <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->
     <sidebar-share :background-color.sync="sidebarBackground"> </sidebar-share>

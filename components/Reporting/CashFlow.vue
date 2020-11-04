@@ -30,21 +30,21 @@
           ></el-table-column>
           <el-table-column
             align="right">
-            <template slot="header" slot-scope="scope">
+            <div slot="header">
               <el-input
                 v-model="search"
                 align="right"
                 size="mini"
                 placeholder="Type to search"/>
-            </template>
-            <template slot-scope="scope">
+            </div>
+            <div slot-scope="scope">
                  <base-button 
                     class="animation-on-hover"
                     size="sm"
                     type="default"
                     @click="handleDetail(scope.$index, scope.row)">
                 <i class="tim-icons icon-notes"></i>Detail</base-button>
-            </template>
+            </div>
           </el-table-column>
         </el-table>
       </card>

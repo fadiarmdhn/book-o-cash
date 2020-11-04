@@ -59,7 +59,9 @@
           </el-table-column>
         </el-table>  
         <div >
-          <base-pagination :page-count="5" v-model="defaultPagination"></base-pagination>
+          <base-pagination 
+            :page-count="5" 
+            v-model="defaultPagination"></base-pagination>
         </div>
       </card>
     </div>
