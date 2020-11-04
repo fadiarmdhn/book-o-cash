@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
-        <h5 slot="header" class="title">Product</h5>
+        <h5 slot="header" class="title">Product List</h5>
         <el-table 
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%">
           <el-table-column
             sortable
-            label="Name"
+            label="Product"
             property="name"
           ></el-table-column>
           <el-table-column
@@ -18,26 +18,20 @@
           ></el-table-column>
           <el-table-column
             sortable
-            label="Tipe"
+            label="Category"
             property="city"
           ></el-table-column>
           <el-table-column
             sortable
             align="right"
             header-align="right"
-            label="Total"
+            label="Purchase Sell"
             property="salary"
           ></el-table-column>
           <el-table-column
             align="right">
             <div slot="header" slot-scope="scope">
-              <el-input
-                v-model="search"
-                align="right"
-                size="mini"
-                placeholder="Type to search"/>
             </div>
-
             <div slot-scope="scope">
                 <el-tooltip content="Info"
                             :open-delay="300"
@@ -47,7 +41,7 @@
                     </base-button>
                 </el-tooltip>
 
-                <el-tooltip content="Settings"
+                <el-tooltip content="Edit"
                             :open-delay="300"
                             placement="top">
                     <base-button type="success" size="sm" icon>
@@ -67,7 +61,7 @@
         </el-table>  
         
         <div >
-          <base-pagination :page-count="10" v-model="defaultPagination" circle></base-pagination>
+          <base-pagination :page-count="10" v-model="defaultPagination"></base-pagination>
         </div>
       </card>
     </div>
