@@ -29,8 +29,8 @@
             sortable
             align="center"
             header-align="center"
-            label="Purchase Price"
-            property="purchase"
+            label="Price"
+            property="price"
           ></el-table-column>
           <el-table-column
             align="center"
@@ -84,49 +84,49 @@ export default {
         {
           id: 1,
           product: 'Nasi Goreng',
-          purchase: 'Rp 168.738',
+          price: 'Rp 168.738',
           date: '29-10-2020',
           category: 'Food'
         },
         {
           id: 2,
           product: 'Nasi Liwet',
-          purchase: 'Rp 237.789',
+          price: 'Rp 237.789',
           date: '29-10-2020',
           category: 'Food'
         },
         {
           id: 3,
           product: 'Puyunghai',
-          purchase: 'Rp 163.142',
+          price: 'Rp 163.142',
           date: '10-10-2020',
           category: 'Food'
         },
         {
           id: 4,
           product: 'Gulai Ayam',
-          purchase: 'Rp 185.735',
+          price: 'Rp 185.735',
           date: '12-10-2020',
           category: 'Food'
         },
         {
           id: 5,
           product: 'Kwetiau Goreng',
-          purchase: 'Rp 130,542',
+          price: 'Rp 130,542',
           date: '13-10-2020',
           category: 'Food'
         },
         {
           id: 6,
           product: 'Teh Manis',
-          purchase: 'Rp 130,542',
+          price: 'Rp 130,542',
           date: '13-10-2020',
           category: 'Beverage'
         },
         {
           id: 7,
           product: 'Jus Jeruk',
-          purchase: 'Rp 130,542',
+          price: 'Rp 130,542',
           date: '13-10-2020',
           category: 'Beverage'
         }
