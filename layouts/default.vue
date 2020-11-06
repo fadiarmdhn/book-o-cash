@@ -4,7 +4,7 @@
     <side-bar
       :background-color="sidebarBackground"
       :short-title="$t('sidebar.shortTitle')"
-      :title="indah"
+      :title="title"
     >
       <div slot="links">
         <sidebar-item
