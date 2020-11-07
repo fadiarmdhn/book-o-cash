@@ -3,10 +3,13 @@
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
         <h3 slot="header" class="title">Inventory</h3>
-        <base-button 
-          class="animation-on-hover" 
-          size="sm" 
-          type="info">Add Stock</base-button>
+        <div class="text-right">
+            <base-button 
+              class="animation-on-hover"
+              size="sm" 
+              type="info">Add Stock
+            </base-button>
+          </div>
         <el-table 
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%">

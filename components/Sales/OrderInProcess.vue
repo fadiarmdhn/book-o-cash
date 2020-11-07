@@ -3,10 +3,13 @@
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
         <h3 slot="header" class="title">Sales Record</h3>
-        <base-button 
-          class="animation-on-hover" 
-          size="sm" 
-          type="info">Add Order</base-button>
+        <div class="text-right">
+            <base-button 
+              class="animation-on-hover"
+              size="sm" 
+              type="info">Add Order
+            </base-button>
+          </div>
         <el-table 
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%">
@@ -46,17 +49,14 @@
             label="Status"
             property="status"
           ></el-table-column>
-          <el-table-column>
-            <div slot-scope="scope">
+          <el-table-column header-align="right">
+            <div slot-scope="{row}" class="text-right">
                  <base-button 
                     size="sm"
                     type="warning"
                     @click="handleDetail(scope.$index, scope.row)"
                   > Edit</base-button>
-            </div>
-          </el-table-column>
-          <el-table-column>
-            <div slot-scope="scope">
+            
                  <base-button 
                     size="sm"
                     type="success"
