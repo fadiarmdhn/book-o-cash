@@ -1,9 +1,10 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <!-- Big Chart -->
-      <big-chart></big-chart>
-
+      <!-- Big Chart 
+        <big-chart></big-chart>
+      -->
+      
       <overview></overview>
     
       <!-- Small Chart -->
