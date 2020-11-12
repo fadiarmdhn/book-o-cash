@@ -7,7 +7,8 @@
             <base-button 
               class="animation-on-hover"
               size="sm" 
-              type="info">Add Order
+              type="info"
+              @click="$router.push({path:'/reporting'})">Add Order
             </base-button>
           </div>
         <el-table 
