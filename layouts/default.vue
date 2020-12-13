@@ -155,7 +155,7 @@
     }
   };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   $scaleSize: 0.95;
   @keyframes zoomIn95 {
     from {

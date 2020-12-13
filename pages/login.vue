@@ -31,7 +31,7 @@
 import {Card} from '@/components'
 export default {
     name: 'login',
-    layout: 'login',
+    layout: 'blank',
     components: {
         Card
     }
