@@ -1,6 +1,6 @@
-[submodule "hrms-backend"]
+[submodule "bookocash-backend"]
 	path = bookocash-backend
 	url = https://github.com/bobyuwono/bookocash-backend/tree/master.git
-[submodule "hrms-frontend"]
+[submodule "bookocash-frontend"]
 	path = bookocash-frontend
 	url = https://github.com/indahpuspitaa17/bookocash-frontend.git
